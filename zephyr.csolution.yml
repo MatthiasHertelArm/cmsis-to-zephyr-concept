@@ -1,0 +1,92 @@
+# A solution is a collection of related projects that share same base configuration.
+solution:
+
+  # List the packs that define the device and/or board.
+  packs:
+    - pack: Keil::STM32L4xx_DFP
+    - pack: Keil::B-L475E-IOT01A_BSP
+    - pack: Keil::STM32U5xx_DFP
+    - pack: Keil::B-U585I-IOT02A_BSP
+    - pack: NXP::MCXN947_DFP@19.0.0
+    - pack: NXP::FRDM-MCXN947_BSP@19.0.0
+    - pack: Infineon::CAT1C_DFP
+    - pack: Infineon::KIT_T2G-B-H_LITE_BSP
+  #  - pack: ARM::V2M_MPS3_SSE_320_BSP
+
+  # List different hardware targets that are used to deploy the solution.
+  target-types:
+    - type: B-L475-IOT01A
+      board: STMicroelectronics::B-L475E-IOT01A
+      device: STMicroelectronics::STM32L475VGTx
+      variables:
+        - west-board: disco_l475_iot1
+      target-set:
+        - set:
+          images:
+            - project-context: blinky.Debug
+            - project-context: ml_inference.Debug
+          debugger:
+            name: ST-Link@pyOCD
+            port: 3333
+            protocol: swd
+            clock: 4000000
+    - type: B-U585I-IOT02A
+      board: STMicroelectronics::B-U585I-IOT02A
+      device: STMicroelectronics::STM32U585AIIx
+      target-set:
+        - set:
+          images:
+            - project-context: threads.Debug
+
+    - type: FRDM-MCXN947
+      board: NXP::FRDM-MCXN947
+      device: NXP::MCXN947VDF:cm33_core0
+      variables:
+        - west-board: frdm_mcxn947/mcxn947/cpu0
+      target-set:
+        - set:
+          images:
+            - project-context: blinky.Debug
+
+    - type: IFX_T2G_B_H
+      board: KIT_T2G-B-H_LITE
+      device: CYT4BF8CDS:Cortex-M0p
+      variables:
+        - west-board: kit_t2g_b_h_lite/cyt4bf8cds/m0p
+      target-set:
+        - set:
+          images:
+            - project-context: blinky.Debug
+
+    - type: Corstone-320
+      board: V2M-MPS3-SSE-320-AN557
+      device: ARM::SSE-320-BS:Cortex-M55
+      variables:
+        - west-board: mps3/corstone320/an557
+      target-set:
+        - set:
+          images:
+            - project-context: ml_inference.Debug
+
+  # List of different build configurations.
+  build-types:
+    - type: Debug
+      west-defs:
+        - CONFIG_DEBUG: y
+        - CONFIG_DEBUG_THREAD_INFO: y
+        - CONFIG_THREAD_STACK_INFO: n
+        - CONFIG_DEBUG_OPTIMIZATIONS: y
+    - type: Release
+      west-defs:
+        - CONFIG_SIZE_OPTIMIZATIONS: y
+
+  # List related projects.
+  projects:
+    - west:
+        app-path: ./blinky
+    - west:
+        app-path: ./threads
+    - west:
+        app-path: ./ml_inference
+  compiler: GCC
+  created-for: CMSIS-Toolbox@2.13.0

@@ -1,0 +1,10 @@
+layer:
+  type: DSP
+  description: CMSIS-DSP is an optimized DSP library for Arm Cortex-M and Cortex-A processors, providing math, filtering, matrix, statistics, transform, and other signal-processing functions.
+
+  packs:
+    - pack: ARM::CMSIS-DSP
+      path: ../../modules/lib/cmsis-dsp
+
+  components:
+    - component: CMSIS:DSP:Source

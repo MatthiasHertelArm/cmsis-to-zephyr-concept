@@ -1,0 +1,107 @@
+# Generated from cmsis-pack-modules/cmsis-dsp.clayer.yml — CMSIS-DSP Zephyr module
+
+menuconfig CMSIS_DSP
+    bool "CMSIS-DSP signal processing library (CMSIS-Pack)"
+    help
+      CMSIS-DSP optimised DSP kernels for Cortex-M / Cortex-A.
+      Source: cmsis-pack-modules/cmsis-dsp.clayer.yml
+
+if CMSIS_DSP
+
+config CMSIS_DSP_BASICMATH
+    bool "Basic math functions"
+    default y
+    help
+      Abs, add, dot-product, multiply, negate, offset, scale, shift, sub, bitwise ops.
+
+config CMSIS_DSP_BAYES
+    bool "Bayes classifier functions"
+    default y
+    help
+      Gaussian naive-Bayes predict functions.
+
+config CMSIS_DSP_COMMONTABLES
+    bool "Common lookup tables"
+    default y
+    help
+      Twiddle factor tables, bit-reversal tables, and constant structures.
+
+config CMSIS_DSP_COMPLEXMATH
+    bool "Complex math functions"
+    default y
+    help
+      Complex conjugate, dot-product, magnitude, multiply operations.
+
+config CMSIS_DSP_CONTROLLER
+    bool "Controller functions"
+    default y
+    help
+      PID controller and sin/cos generation.
+
+config CMSIS_DSP_DISTANCE
+    bool "Distance functions"
+    default y
+    help
+      Euclidean, cosine, cityblock, Minkowski, and other distance metrics.
+
+config CMSIS_DSP_FASTMATH
+    bool "Fast math functions"
+    default y
+    help
+      Trigonometric, division, sqrt, log, exp approximations.
+
+config CMSIS_DSP_FILTERING
+    bool "Filtering functions"
+    default y
+    help
+      FIR, IIR, biquad, convolution, correlation, decimation, interpolation, LMS filters.
+
+config CMSIS_DSP_INTERPOLATION
+    bool "Interpolation functions"
+    default y
+    help
+      Linear and bilinear interpolation, spline interpolation.
+
+config CMSIS_DSP_MATRIX
+    bool "Matrix functions"
+    default y
+    help
+      Matrix add, subtract, multiply, transpose, inverse, Cholesky, QR, LDL decomposition.
+
+config CMSIS_DSP_QUATERNIONMATH
+    bool "Quaternion math functions"
+    default y
+    help
+      Quaternion normalisation, conjugate, product, rotation conversion.
+
+config CMSIS_DSP_SVM
+    bool "SVM classifier functions"
+    default y
+    help
+      Linear, polynomial, RBF, and sigmoid SVM predict/init.
+
+config CMSIS_DSP_STATISTICS
+    bool "Statistics functions"
+    default y
+    help
+      Min, max, mean, variance, std-dev, RMS, power, MSE, entropy, KL-divergence.
+
+config CMSIS_DSP_SUPPORT
+    bool "Support / utility functions"
+    default y
+    help
+      Copy, fill, sort, type-conversion helpers.
+
+config CMSIS_DSP_TRANSFORM
+    bool "Transform functions"
+    default y
+    help
+      FFT (CFFT, RFFT), DCT, MFCC transforms.
+
+config CMSIS_DSP_WINDOW
+    bool "Window functions"
+    default y
+    help
+      Hanning, Hamming, Blackman-Harris, Bartlett, Welch, Nuttall, flat-top windows.
+
+endif # CMSIS_DSP

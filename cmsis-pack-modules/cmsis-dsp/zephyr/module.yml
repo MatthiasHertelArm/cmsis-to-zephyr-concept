@@ -1,0 +1,5 @@
+# Generated from cmsis-pack-modules/cmsis-dsp.clayer.yml — CMSIS-DSP Zephyr module
+name: cmsis-dsp-pack
+build:
+  cmake: .
+  kconfig: Kconfig

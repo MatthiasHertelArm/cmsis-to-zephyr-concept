@@ -1,0 +1,60 @@
+# Generated from cmsis-ai/ML.clayer.yml — ExecuTorch Zephyr module
+
+menuconfig CMSIS_EXECUTORCH_ML
+    bool "ExecuTorch ML framework (CMSIS-Pack)"
+    depends on CPP && STD_CPP17
+    help
+      ExecuTorch runtime and backends resolved from CMSIS-Packs.
+      Source: executorch/executorch.clayer.yml
+
+if CMSIS_EXECUTORCH_ML
+
+config CMSIS_EXECUTORCH_RUNTIME
+    bool "ExecuTorch core runtime"
+    default y
+    help
+      ExecuTorch PyTorch Edge Runtime for on-device inference.
+
+config CMSIS_EXECUTORCH_KERNEL_UTILS
+    bool "ExecuTorch kernel utility functions"
+    default y
+    help
+      Portable kernel utility helpers (broadcast, copy, etc.).
+
+config CMSIS_EXECUTORCH_KERNEL_REGISTRATION
+    bool "ExecuTorch kernel registration (all portable kernels)"
+    default y
+    help
+      Registers all portable operator kernels with the ExecuTorch runtime.
+
+config CMSIS_EXECUTORCH_BACKEND_ETHOSU
+    bool "Ethos-U NPU backend"
+    default y
+    help
+      Hardware acceleration backend for Arm Ethos-U55/U65 NPU.
+
+config CMSIS_EXECUTORCH_PLATFORM_BARE_METAL
+    bool "Bare-metal platform stubs"
+    default y
+    help
+      POSIX stubs for bare-metal targets without an OS layer.
+
+config CMSIS_EXECUTORCH_STUBS_RANDOM
+    bool "Random operation stubs"
+    default y
+    help
+      Stubs for rand/randn on platforms without std::random_device.
+
+config CMSIS_EXECUTORCH_OPS_QUANTIZED
+    bool "Quantized operators (quantize/dequantize)"
+    default y
+    help
+      Quantize and dequantize operators used by quantized models.
+
+config CMSIS_EXECUTORCH_BACKEND_CORTEXM
+    bool "Cortex-M backend (CMSIS-NN optimized)"
+    default y
+    help
+      CMSIS-NN optimized operator implementations for Cortex-M.
+
+endif # CMSIS_EXECUTORCH_ML

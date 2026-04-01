@@ -1,0 +1,89 @@
+# Generated from cmsis-pack-modules/cmsis-nn.clayer.yml — CMSIS-NN Zephyr module
+
+menuconfig CMSIS_NN
+    bool "CMSIS-NN neural network library (CMSIS-Pack)"
+    help
+      CMSIS-NN optimised neural network kernels for Cortex-M.
+      Source: cmsis-pack-modules/cmsis-nn.clayer.yml
+
+if CMSIS_NN
+
+config CMSIS_NN_ACTIVATION
+    bool "Activation functions"
+    default y
+    help
+      ReLU and related activation functions.
+
+config CMSIS_NN_BASICMATH
+    bool "Basic math functions"
+    default y
+    help
+      Element-wise add, mul, minimum, maximum operations.
+
+config CMSIS_NN_CONCATENATION
+    bool "Concatenation functions"
+    default y
+    help
+      Tensor concatenation along different axes.
+
+config CMSIS_NN_CONVOLUTION
+    bool "Convolution functions"
+    default y
+    help
+      Standard, depthwise, and transpose convolution kernels.
+
+config CMSIS_NN_FULLYCONNECTED
+    bool "Fully connected functions"
+    default y
+    help
+      Dense / fully-connected layer and batch matmul kernels.
+
+config CMSIS_NN_LSTM
+    bool "LSTM functions"
+    default y
+    help
+      Unidirectional LSTM recurrent-layer kernels.
+
+config CMSIS_NN_POOLING
+    bool "Pooling functions"
+    default y
+    help
+      Average and max pooling kernels.
+
+config CMSIS_NN_SOFTMAX
+    bool "Softmax functions"
+    default y
+    help
+      Softmax and related normalisation kernels.
+
+config CMSIS_NN_SVDF
+    bool "SVDF functions"
+    default y
+    help
+      Singular Value Decomposition Filter kernels.
+
+config CMSIS_NN_RESHAPE
+    bool "Reshape functions"
+    default y
+    help
+      Tensor reshape operations.
+
+config CMSIS_NN_TRANSPOSE
+    bool "Transpose functions"
+    default y
+    help
+      Tensor transpose operations.
+
+config CMSIS_NN_PAD
+    bool "Pad functions"
+    default y
+    help
+      Tensor padding operations.
+
+config CMSIS_NN_SUPPORT
+    bool "NN support functions"
+    default y
+    help
+      Internal support / utility functions required by other categories.
+
+endif # CMSIS_NN

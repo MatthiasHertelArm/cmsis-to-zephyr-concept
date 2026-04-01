@@ -1,0 +1,10 @@
+layer:
+  type: AI
+  description: CMSIS-NN is an optimized neural network library for Arm Cortex-M processors, providing efficient implementations of common NN operators.
+
+  packs:
+    - pack: ARM::CMSIS-NN
+      path: ../../modules/lib/cmsis-nn
+
+  components:
+    - component: CMSIS:NN Lib

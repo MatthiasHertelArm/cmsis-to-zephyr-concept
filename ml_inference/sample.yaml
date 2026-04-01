@@ -1,0 +1,8 @@
+sample:
+  description: ML inference using LiteRT from CMSIS-Packs
+  name: ml_inference
+  platforms:
+    - mps3/corstone320/an557
+common:
+  tags: ml executorch cmsis-pack
+  depends_on: cpp

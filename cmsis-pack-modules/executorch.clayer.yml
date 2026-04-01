@@ -1,0 +1,26 @@
+layer:
+  type: AI
+  description: ExecuTroch is a high-performance inference engine for microcontrollers, designed to run PyTorch models on resource-constrained devices. 
+
+  packs:
+    - pack: PyTorch::ExecuTorch
+      path: ../../../packs/PyTorch.ExecuTorch.1.1.0-rc1-build.12
+
+  define:
+    - ET_LOG_ENABLED: 0
+
+  components:
+    # ExecuTorch core runtime
+    - component: Machine Learning:ExecuTorch:Runtime
+    - component: Machine Learning:ExecuTorch:Kernel Utils
+    - component: Machine Learning:ExecuTorch:Kernel Registration
+    # Ethos-U NPU backend
+    - component: Machine Learning:ExecuTorch:Backend EthosU
+    # Bare-metal PAL stubs (replaces posix.cpp)
+    - component: Machine Learning:ExecuTorch:Platform Bare-Metal
+    # Random op stubs (no std::random_device on bare-metal)
+    - component: Machine Learning:ExecuTorch:Stubs RandomOps
+    # Quantized operators used by the RPS model
+    - component: Machine Learning:ExecuTorch:Operators Quantized quantize
+    - component: Machine Learning:ExecuTorch:Operators Quantized dequantize
+    - component: Machine Learning:ExecuTorch:Backend CortexM

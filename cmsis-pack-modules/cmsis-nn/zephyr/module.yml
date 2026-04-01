@@ -1,0 +1,5 @@
+# Generated from cmsis-pack-modules/cmsis-nn.clayer.yml — CMSIS-NN Zephyr module
+name: cmsis-nn-pack
+build:
+  cmake: .
+  kconfig: Kconfig

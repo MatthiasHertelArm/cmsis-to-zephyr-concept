@@ -1,0 +1,5 @@
+# Generated from cmsis-ai/ML.clayer.yml — ExecuTorch Zephyr module
+name: executorch-ml
+build:
+  cmake: .
+  kconfig: Kconfig

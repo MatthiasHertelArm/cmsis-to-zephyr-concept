@@ -1,0 +1,7 @@
+{
+    "clangd.arguments": [
+        "--compile-commands-dir=/Users/mather01/Documents/cmsis-zephyr-ml-example/out/ml_inference/B-L475-IOT01A/Debug"
+    ],
+    "debug.hideSlowPreLaunchWarning": true,
+    "debug.showInStatusBar": "never"
+}
