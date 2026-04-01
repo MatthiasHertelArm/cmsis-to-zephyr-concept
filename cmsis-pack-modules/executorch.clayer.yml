@@ -1,6 +1,6 @@
 layer:
   type: AI
-  description: ExecuTroch is a high-performance inference engine for microcontrollers, designed to run PyTorch models on resource-constrained devices. 
+  description: ExecuTorch is a high-performance inference engine for microcontrollers, designed to run PyTorch models on resource-constrained devices. 
 
   packs:
     - pack: PyTorch::ExecuTorch
