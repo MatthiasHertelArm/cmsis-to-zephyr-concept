@@ -1,0 +1,18 @@
+# Generated from model1.clayer.yml — Model 1 Zephyr module
+
+menuconfig CMSIS_MODEL1
+    bool "Model 1 (CMSIS-Pack)"
+    depends on CPP && STD_CPP17
+    help
+      Model 1 blob requiring quantized operators.
+      Source: model1.clayer.yml
+
+if CMSIS_MODEL1
+
+config CMSIS_MODEL1_OPS_QUANTIZED
+    bool "Quantized operators (quantize/dequantize)"
+    default y
+    help
+      Quantize and dequantize operators used by the model.
+
+endif # CMSIS_MODEL1

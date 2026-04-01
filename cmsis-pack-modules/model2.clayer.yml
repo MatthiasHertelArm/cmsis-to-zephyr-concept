@@ -1,0 +1,26 @@
+layer:
+  type: AI
+  description: Model 2 — a pre-trained model blob requiring portable and quantized operators.
+
+  packs:
+    - pack: PyTorch::ExecuTorch
+      path: ../../../packs/PyTorch.ExecuTorch.1.1.0-rc1-build.12
+
+  components:
+    # Portable operators used by the model
+    - component: Machine Learning:ExecuTorch:Operators Portable add
+    - component: Machine Learning:ExecuTorch:Operators Portable exp
+    - component: Machine Learning:ExecuTorch:Operators Portable mul
+    - component: Machine Learning:ExecuTorch:Operators Portable reciprocal
+    - component: Machine Learning:ExecuTorch:Operators Portable sigmoid
+    - component: Machine Learning:ExecuTorch:Operators Portable sum
+    - component: Machine Learning:ExecuTorch:Operators Portable unsqueeze_copy
+    # Quantized operators used by the model
+    - component: Machine Learning:ExecuTorch:Operators Quantized dequantize
+    - component: Machine Learning:ExecuTorch:Operators Quantized quantize
+
+  #groups:
+    # AI Model
+   # - group: Executorch Model 2
+   #   files:
+   #     - file: ./model/model2.h

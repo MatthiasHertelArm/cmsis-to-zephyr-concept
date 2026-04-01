@@ -1,0 +1,24 @@
+# Generated from model2.clayer.yml — Model 2 Zephyr module
+
+menuconfig CMSIS_MODEL2
+    bool "Model 2 (CMSIS-Pack)"
+    depends on CPP && STD_CPP17
+    help
+      Model 2 blob requiring portable and quantized operators.
+      Source: model2.clayer.yml
+
+if CMSIS_MODEL2
+
+config CMSIS_MODEL2_OPS_PORTABLE
+    bool "Portable operators (add, exp, mul, reciprocal, sigmoid, sum, unsqueeze_copy)"
+    default y
+    help
+      Portable operators used by the model.
+
+config CMSIS_MODEL2_OPS_QUANTIZED
+    bool "Quantized operators (quantize/dequantize)"
+    default y
+    help
+      Quantize and dequantize operators used by the model.
+
+endif # CMSIS_MODEL2

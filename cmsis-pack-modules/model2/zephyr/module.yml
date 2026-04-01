@@ -1,0 +1,5 @@
+# Generated from model2.clayer.yml — Model 2 Zephyr module
+name: model2
+build:
+  cmake: .
+  kconfig: Kconfig

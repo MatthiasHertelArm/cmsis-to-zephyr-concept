@@ -1,0 +1,18 @@
+layer:
+  type: AI
+  description: Model 1 — a pre-trained model blob requiring quantized operators.
+
+  packs:
+    - pack: PyTorch::ExecuTorch
+      path: ../../../packs/PyTorch.ExecuTorch.1.1.0-rc1-build.12
+
+  components:
+    # Quantized operators used by the model
+    - component: Machine Learning:ExecuTorch:Operators Quantized dequantize
+    - component: Machine Learning:ExecuTorch:Operators Quantized quantize
+ 
+  #groups:
+    # AI Model
+   # - group: Executorch Model 1
+   #   files:
+   #     - file: ./model/model1.h
